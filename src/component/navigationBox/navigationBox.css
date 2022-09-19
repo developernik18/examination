@@ -1,0 +1,52 @@
+.navigationContainer {
+  flex: 2;
+}
+
+.navigationHeader {
+  width: 70%;
+  background-color: rgb(37, 150, 144);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  border-radius: 4px 4px 0 0;
+}
+
+.navigationBody {
+  padding: 20px 5px;
+  display: grid;
+  width: 70%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+.questionNavigation {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+.questinNumberDisplay {
+  width: 15px;
+  text-align: right;
+}
+
+.answerState {
+  content: "";
+  margin-left: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  box-shadow: 0px 0px 1px #333;
+  cursor: pointer;
+}
+
+.needReview {
+  background-color: orange;
+}
+
+.notAnswered {
+  background-color: aliceblue;
+}

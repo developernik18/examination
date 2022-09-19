@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Header from "./component/header/Header";
+import NavigationBox from "./component/navigationBox/NavigationBox";
+import QuestionBox from "./component/questionBox/QuestionBox";
 
 function App() {
+  const [activeQuestion, setActiveQuestion] = useState(null);
+
+  const handleQuestionSelection = (ques, quesNo, totalQues) => {
+    ques.quesNo = quesNo;
+    ques.totalQues = totalQues;
+    setActiveQuestion(ques);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="bodyContainer container">
+        <NavigationBox
+          handleQuestionSelection={handleQuestionSelection}
+          activeQuestion={activeQuestion}
+        />
+        {activeQuestion && <QuestionBox activeQuestion={activeQuestion} />}
+      </div>
     </div>
   );
 }
