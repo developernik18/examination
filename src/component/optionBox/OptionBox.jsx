@@ -1,13 +1,16 @@
-import './optionBox.css';
+import "./optionBox.css";
 
-export default function OptionBox({option}) {
+export default function OptionBox({
+  option,
+  handleAnswerSelection,
+  activeQuestion,
+}) {
   return (
-    // <label className="radioField">
-    //   <input type="radio" id={`option`} name="question1" value="a" />
-    //   {option.desc}
-    // </label>
-    <div className="optionBox">
+    <div
+      className={activeQuestion.answerId === option.id ? 'optionBox selected' : "optionBox" }
+      onClick={() => handleAnswerSelection(activeQuestion, option)}
+    >
       {option.desc}
     </div>
-  )
+  );
 }

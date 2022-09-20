@@ -3,7 +3,7 @@
 }
 
 .navigationHeader {
-  width: 70%;
+  width: 100%;
   background-color: rgb(37, 150, 144);
   color: #fff;
   display: flex;
@@ -14,10 +14,18 @@
   border-radius: 4px 4px 0 0;
 }
 
+.collapseButton {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .navigationBody {
   padding: 20px 5px;
   display: grid;
-  width: 70%;
+  width: 100%;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
@@ -43,10 +51,34 @@
   cursor: pointer;
 }
 
-.needReview {
+.markForAnswers {
+  margin-top: 80px;
+}
+
+.answerStateContainer {
+  display: flex;
+  align-items:flex-start;
+  margin: 20px 0;
+}
+
+.answerStateLabel {
+  margin-left: 20px;
+  margin-top: -3px;
+  font-size: 1.2rem;
+}
+
+.questionAnswered {
+  background-color: rgb(54, 146, 77);
+}
+
+.markedForReview {
   background-color: orange;
 }
 
-.notAnswered {
-  background-color: aliceblue;
+.leaveQuestion {
+  background-color: rgb(123, 65, 65);
+}
+
+.yetToAnswer {
+  background-color: #fff;
 }

@@ -18,3 +18,14 @@ code {
   max-width: 1200px;
   margin: auto;
 }
+
+.button {
+  padding: 8px 20px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  min-width: 120px;
+  border: none;
+  letter-spacing: 0.6px;
+  letter-spacing: 1.5;
+  cursor: pointer;
+}

@@ -1,19 +1,22 @@
 .questionBox {
-  flex: 4;
+  flex: 8;
   display: flex;
-  justify-content: center;
   margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
 }
 
 .questionCard {
   min-width: 400px;
   width: 80%;
   min-height: 100px;
-  background-color: teal;
+  /* background-color: teal; */
   border-radius: 10px;
-  box-shadow: 0 0 2px blueviolet;
-  color: #fff;
-  padding: 20px 40px;
+  /* box-shadow: 0 0 1px blueviolet; */
+  /* color: #fff; */
+  color: teal;
+  /* padding: 20px 40px; */
   font-size: 1.3rem;
   line-height: 1.5;
   letter-spacing: 0.6px;
@@ -21,11 +24,29 @@
 
 .questionCountSection {
   font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.3);
+  /* color: rgba(255, 255, 255, 0.3); */
+  color: rgba(0, 128, 128, 0.7);
   margin-bottom: 10px;
 }
 
 .currentNumber {
   font-size: 2rem;
-  color: rgba(255, 255, 255, 0.5);
+  /* color: rgba(255, 255, 255, 0.5); */
 }
+
+.buttonGroup {
+  position: fixed;
+  bottom: 50px;
+  right: 20vw;
+}
+
+.previousButton, .nextButton {
+  background-color: rgb(89, 161, 161);
+  color: #fff;
+  margin-right: 10px;
+}
+
+.previousButton:hover, .nextButton:hover {
+  background-color: teal;
+}
+
