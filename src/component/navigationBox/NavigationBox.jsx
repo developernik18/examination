@@ -2,13 +2,11 @@ import "./navigationBox.css";
 import { useEffect } from "react";
 
 export default function NavigationBox({
-  activeQuestion,
   handleQuestionSelection,
   questionAnswer
 }) {
-
   useEffect(() => {
-    if (questionAnswer.length && activeQuestion === null) {
+    if (questionAnswer.filter(qA => qA.active).length < 1) {
       const quesNo = 1;
       const previous = null;
       const next = questionAnswer[1];
@@ -20,7 +18,7 @@ export default function NavigationBox({
         next
       );
     }
-  }, [handleQuestionSelection, activeQuestion, questionAnswer]);
+  }, [handleQuestionSelection, questionAnswer]);
 
   return (
     <div className="navigationContainer">
@@ -31,6 +29,13 @@ export default function NavigationBox({
       <div className="navigationBody">
         {questionAnswer.map((q, index, qArray) => {
           let count = index + 1;
+          let answerStateClass = q.answerId
+            ? q.reviewLater
+              ? "answerState markedForReview"
+              : "answerState questionAnswered"
+            : q.leaveQuestion
+              ? "answerState leaveQuestion"
+              : "answerState";
           return (
             <div
               className="questionNavigation"
@@ -46,15 +51,15 @@ export default function NavigationBox({
               }
             >
               <div className="questinNumberDisplay">{count}</div>
-              <div className="answerState"></div>
+              <div className={answerStateClass}></div>
             </div>
           );
         })}
       </div>
       <div className="markForAnswers">
         <div className="answerStateContainer">
-          <div className="answerState questionAnswered"></div> 
-          <div className="answerStateLabel"> Question Answered </div> 
+          <div className="answerState questionAnswered"></div>
+          <div className="answerStateLabel"> Question Answered </div>
         </div>
         <div className="answerStateContainer">
           <div className="answerState markedForReview"></div>
@@ -62,7 +67,7 @@ export default function NavigationBox({
         </div>
         <div className="answerStateContainer">
           <div className="answerState leaveQuestion"></div>
-          <div className="answerStateLabel"> Leave Question </div> 
+          <div className="answerStateLabel"> Leave Question </div>
         </div>
         <div className="answerStateContainer">
           <div className="answerState yetToAnswer"></div>

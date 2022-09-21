@@ -1,3 +1,27 @@
+:root {
+  --light-primary: rgb(89, 161, 161);
+  --primary: hsl(180, 100%, 25%);
+
+  --dark-text: #333;
+  --dark-text-hover: #222;
+  --light-text: #fff;
+
+  --dark-shadow: #333;
+  --light-border: rgba(0, 0, 0, 0.05);
+  --light-background-hover: rgba(0, 128, 128, 0.1);
+
+  --empty-box-color: #fff;
+  --answer-box-color:rgb(76, 193, 105);
+  --left-box-color: rgb(123, 65, 65);
+  --marked-box-color: rgb(255, 165, 0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

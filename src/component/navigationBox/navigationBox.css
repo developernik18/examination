@@ -4,8 +4,8 @@
 
 .navigationHeader {
   width: 100%;
-  background-color: rgb(37, 150, 144);
-  color: #fff;
+  background-color: var(--light-primary);
+  color: var(--light-text);
   display: flex;
   justify-content: space-between;
   padding: 15px;
@@ -16,7 +16,7 @@
 
 .collapseButton {
   background-color: transparent;
-  color: #fff;
+  color: var(--light-text);
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
@@ -47,7 +47,7 @@
   width: 20px;
   height: 20px;
   border-radius: 2px;
-  box-shadow: 0px 0px 1px #333;
+  box-shadow: 0px 0px 1px var(--dark-shadow);
   cursor: pointer;
 }
 
@@ -68,17 +68,17 @@
 }
 
 .questionAnswered {
-  background-color: rgb(54, 146, 77);
+  background-color: var(--answer-box-color);
 }
 
 .markedForReview {
-  background-color: orange;
+  background-color: var(--marked-box-color);
 }
 
 .leaveQuestion {
-  background-color: rgb(123, 65, 65);
+  background-color: var(--left-box-color)
 }
 
 .yetToAnswer {
-  background-color: #fff;
+  background-color: var(--empty-box);
 }

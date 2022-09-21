@@ -7,7 +7,13 @@ export default function OptionBox({
 }) {
   return (
     <div
-      className={activeQuestion.answerId === option.id ? 'optionBox selected' : "optionBox" }
+      className={
+        activeQuestion.answerId === option.id
+          ? activeQuestion.reviewLater
+            ? "optionBox reviewLater"
+            : "optionBox selected"
+          : "optionBox"
+      }
       onClick={() => handleAnswerSelection(activeQuestion, option)}
     >
       {option.desc}

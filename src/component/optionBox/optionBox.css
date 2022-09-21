@@ -1,12 +1,7 @@
-.radioField {
-  display: block;
-}
-
 .optionBox {
   font-size: 1.1rem;
-  /* color: rgba(255, 255, 255, 0.9); */
-  color: rgba(25, 25, 25, 0.9);
-  border:3px solid rgba(0, 0, 0, 0.05);
+  color: var(--dark-text);
+  border:3px solid var(--light-border);
   margin: 20px 20px;
   padding: 10px 20px;
   border-radius: 10px;
@@ -14,17 +9,21 @@
 }
 
 .optionBox:hover {
-  background-color: rgba(0, 128, 128, 0.1);
-  color: #222;
-  /* background-color: rgba(0, 0, 0, 0.2); */
+  background-color: var(--light-background-hover);
+  color: var(--dark-text-hover);
 }
 
 .selected {
-  background-color: rgb(89, 161, 161);
-  color: #fff;
+  background-color: var(--light-primary);
+  color: var(--light-text);
+}
+
+.reviewLater {
+  background-color: var(--marked-box-color);
+  color: var(--light-text);
 }
 
 .selected:hover {
-  background-color: teal;
-  color: #fff;
+  background-color: var(--primary);
+  color: var(--light-text);
 }

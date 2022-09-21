@@ -6,15 +6,27 @@ import QuestionBox from "./component/questionBox/QuestionBox";
 import { questionBank } from "./data";
 
 function App() {
-  const [activeQuestion, setActiveQuestion] = useState(null);
+  // const [activeQuestion, setActiveQuestion] = useState(null);
   const [questionAnswer, setQuestionAnswer] = useState(questionBank);
+  const activeQuestion = questionAnswer.filter(qA => qA.active)[0];
 
   const handleQuestionSelection = (ques, quesNo, totalQues, previous, next) => {
-    ques.quesNo = quesNo;
-    ques.totalQues = totalQues;
-    ques.previous = previous;
-    ques.next = next;
-    setActiveQuestion(ques);
+    let newQues = {...ques};
+    newQues.quesNo = quesNo;
+    newQues.totalQues = totalQues;
+    newQues.previousId = previous?.id;
+    newQues.nextId = next?.id;
+    newQues.active = true;
+    // setActiveQuestion(newQues);
+    setQuestionAnswer(prev => {
+      return prev.map(p => {
+        if(p.id === newQues.id) {
+          return newQues;
+        } else {
+          return {...p, active: false};
+        }
+      })
+    })
   };
 
   return (
@@ -23,7 +35,6 @@ function App() {
       <div className="bodyContainer container">
         <NavigationBox
           handleQuestionSelection={handleQuestionSelection}
-          activeQuestion={activeQuestion}
           questionAnswer={questionAnswer}
         />
         {activeQuestion && (

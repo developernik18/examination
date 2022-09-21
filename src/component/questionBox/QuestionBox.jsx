@@ -9,12 +9,13 @@ export default function QuestionBox({
 }) {
 
   const handleAnswerSelection = (activeQuestion, option) => {
-    activeQuestion.answerId = option.id;
-    
     setQuestionAnswer(prev => {
       return prev.map(p => {
         if(p.id === activeQuestion.id) {
-          return {...p, answerId: option.id}
+          if(p.answerId === option.id) {
+            return {...p, answerId: null, reviewLater: false, leaveQuestion: false};
+          }
+          return {...p, answerId: option.id, reviewLater: false, leaveQuestion: false};
         }
         return p;
       })
@@ -55,6 +56,34 @@ export default function QuestionBox({
     });
   };
 
+  const handleMarkingForReview = (activeQuestion) => {
+    setQuestionAnswer(prev => {
+      return prev.map(p => {
+        if(activeQuestion.id === p.id) {
+          if(p.reviewLater) {
+            return {...p, "reviewLater": false};
+          }
+          return {...p, "reviewLater": true};
+        }
+        return p;        
+      })
+    })
+  }
+
+  const handleQuestionsToLeave = (activeQuestion) => {
+    setQuestionAnswer(prev => {
+      return prev.map(p => {
+        if(activeQuestion.id === p.id) {
+          if(p.leaveQuestion) {
+            return {...p, "leaveQuestion": false};
+          }
+          return {...p, "leaveQuestion": true};
+        }
+        return p;        
+      })
+    })
+  }
+
   return (
     <div className="questionBox">
       <div className="questionCard">
@@ -81,7 +110,23 @@ export default function QuestionBox({
         </div>
       </div>
       <div className="buttonGroup">
-        {activeQuestion.previous && (
+        {activeQuestion.answerId &&
+          (<button
+            className="button reviewMarkingButton"
+            onClick={() => handleMarkingForReview(activeQuestion)}
+          >
+            Review Later
+          </button>)
+        }
+        {!activeQuestion.answerId &&
+          (<button
+            className="button leaveQuestionButton"
+            onClick={() => handleQuestionsToLeave(activeQuestion)}
+          >
+            Don't Know
+          </button>)
+        }
+        {activeQuestion.previousId && (
           <button
             className="button previousButton"
             onClick={() => handlePreviousButton(activeQuestion)}
@@ -89,7 +134,7 @@ export default function QuestionBox({
             Previous
           </button>
         )}
-        {activeQuestion.next && (
+        {activeQuestion.nextId && (
           <button
             className="button nextButton"
             onClick={() => handleNextButton(activeQuestion)}
