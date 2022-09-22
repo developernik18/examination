@@ -8,3 +8,13 @@
   font-size: 1.6rem;
   font-weight: 500;
 }
+
+.headerItemsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timer {
+  font-size: 1.3rem;
+}
