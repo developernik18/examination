@@ -1,16 +1,20 @@
 import Timer from '../timer/Timer';
+import { Link } from 'react-router-dom';
 import './header.css';
 
-export default function Header() {
+export default function Header({timerRequired}) {
   return (
     <div className='headerContainer'>
       <div className="container headerItemsContainer">
-        <div className="logo">
-          Exam Time
-        </div>
-        <div className="timer">
-          <Timer />
-        </div>
+        <Link to="/" className="logo">
+            Exam Time
+        </Link>
+        {timerRequired && (
+          <div className="timer">
+            <Timer />
+          </div>
+        )}
+
       </div>
     </div>
   )

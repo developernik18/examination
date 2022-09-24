@@ -9,6 +9,11 @@
   font-weight: 500;
 }
 
+.logo {
+  color: #fff;
+  text-decoration: none;
+}
+
 .headerItemsContainer {
   display: flex;
   justify-content: space-between;
