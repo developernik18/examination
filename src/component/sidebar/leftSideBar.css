@@ -1,0 +1,29 @@
+.sideBarMenu {
+  position: fixed;
+  width: var(--sidebar-width);
+  box-shadow: 0 0 10px #ccc;
+  padding: var(--sidebar-padding);
+  height: calc(100vh - 150px);
+}
+
+.sideBarMenuItem {
+  padding: 10px 0;
+}
+
+.sideBarMenuLink {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.sideBarMenuIcon {
+  width: 20px;
+}
+
+.sideBarMenuLabel {
+  padding: 0 10px 5px 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}

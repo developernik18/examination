@@ -14,6 +14,10 @@
   --answer-box-color:rgb(76, 193, 105);
   --left-box-color: rgb(123, 65, 65);
   --marked-box-color: rgb(255, 165, 0);
+
+  --sidebar-margin: 280px;
+  --sidebar-width: 200px;
+  --sidebar-padding: 40px;
 }
 
 * {
@@ -38,8 +42,8 @@ code {
 
 
 .container {
-  width: calc(100% - 40px);
-  max-width: 1200px;
+  width: calc(100% - 80px);
+  max-width: 2000px;
   margin: auto;
 }
 
@@ -52,4 +56,12 @@ code {
   letter-spacing: 0.6px;
   letter-spacing: 1.5;
   cursor: pointer;
+}
+
+.primaryButton {
+  color: var(--primary);
+}
+
+.row{
+  display: flex;
 }

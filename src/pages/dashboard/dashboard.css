@@ -1,0 +1,77 @@
+.dashboardBodyContainer {
+  background-color: #eee;
+  min-height: calc(100vh - 150px);
+  margin-left: var(--sidebar-margin);
+  padding: 40px;
+}
+
+.pageTitle {
+  font-size: 1.5rem;
+}
+
+.welcomeBox {
+  background-color: var(--primary);
+  min-height: 150px;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 40px;
+  flex: 8;
+  color: var(--light-text);
+}
+
+.greetings {
+  font-size: 1.5rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.profileSummary {
+  margin: 40px 0 20px 0;
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  line-height: 1.5;
+}
+
+.statsOverview {
+  flex: 4;
+  background-color: #fafafa;
+  min-height: 150px;
+  margin: 20px 0 20px 20px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 40px;
+}
+
+.statsBox {
+  padding: 20px;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.statValue {
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.rightBottomShadow {
+  box-shadow: 1px 1px 1px var(--light-border);
+}
+
+.leftBottomShadow {
+  box-shadow: -1px 1px 1px var(--light-border);
+}
+
+.rightTopShadow {
+  box-shadow: 1px -1px 1px var(--light-border);
+}
+
+.leftTopShadow {
+  box-shadow: -1px -1px 1px var(--light-border);
+}
