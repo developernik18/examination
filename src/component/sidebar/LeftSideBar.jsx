@@ -15,7 +15,7 @@ export default function LeftSideBar() {
         </Link>
       </div>
       <div className="sideBarMenuItem">
-        <Link to="/exams" className='sideBarMenuLink'>
+        <Link to="/allExams" className='sideBarMenuLink'>
           <span>
             <img src="/images/exams.svg" alt="Exam icon" className='sideBarMenuIcon' />
           </span>

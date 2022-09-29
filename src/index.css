@@ -5,6 +5,8 @@
   --dark-text: #333;
   --dark-text-hover: #222;
   --light-text: #fff;
+  --light-gray-text: #aaa;
+  --dark-gray-text: #555;
 
   --dark-shadow: #333;
   --light-border: rgba(0, 0, 0, 0.05);
@@ -60,8 +62,19 @@ code {
 
 .primaryButton {
   color: var(--primary);
+  background-color: var(--empty-box-color);
+  border: 1px solid var(--primary);
+}
+
+.primaryButton:hover {
+  background-color: var(--primary);
+  color: var(--light-text);
 }
 
 .row{
   display: flex;
+}
+
+.spaceBetween {
+  justify-content: space-between;
 }

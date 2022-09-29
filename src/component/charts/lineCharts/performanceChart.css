@@ -1,0 +1,13 @@
+
+.performanceChart {
+  background: #fff;
+  flex: 8;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 20px 0;
+}
+
+.performanceLineChart {
+  width: 80%;
+  margin: auto;
+}

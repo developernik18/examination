@@ -9,6 +9,7 @@
   color: #fff;
   font-size: 1.6rem;
   font-weight: 500;
+  z-index: 10000;
 }
 
 .logo {
