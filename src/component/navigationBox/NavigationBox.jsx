@@ -24,7 +24,6 @@ export default function NavigationBox({
     <div className="navigationContainer">
       <div className="navigationHeader">
         <span>Question Index</span>
-        <button className="collapseButton"> &lt;&lt; </button>
       </div>
       <div className="navigationBody">
         {questionAnswer.map((q, index, qArray) => {

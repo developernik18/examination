@@ -3,6 +3,7 @@ import NavigationBox from "../../component/navigationBox/NavigationBox";
 import QuestionBox from "../../component/questionBox/QuestionBox";
 import { questionBank } from "../../data";
 import { useState } from "react";
+import LeftSideBar from "../../component/sidebar/LeftSideBar";
 import './exams.css';
 
 export default function Exams() {
@@ -30,20 +31,25 @@ export default function Exams() {
   return (
     <div>
       <Header timerRequired={true}/>
-      <div className="bodyContainer container">
-        <NavigationBox
-          handleQuestionSelection={handleQuestionSelection}
-          questionAnswer={questionAnswer}
-        />
-        {activeQuestion && (
-          <QuestionBox
-            activeQuestion={activeQuestion}
+      <LeftSideBar />
+      <div className="pageBodyContainer">
+        <div className="bodyContainer">
+          {activeQuestion && (
+            <QuestionBox
+              activeQuestion={activeQuestion}
+              handleQuestionSelection={handleQuestionSelection}
+              questionAnswer={questionAnswer}
+              setQuestionAnswer={setQuestionAnswer}
+            />
+          )}
+          <NavigationBox
             handleQuestionSelection={handleQuestionSelection}
             questionAnswer={questionAnswer}
-            setQuestionAnswer={setQuestionAnswer}
           />
-        )}
+        </div>
+
       </div>
+      
     </div>
   );
 }
