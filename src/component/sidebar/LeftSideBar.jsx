@@ -24,7 +24,7 @@ export default function LeftSideBar() {
           </span>
         </Link>
       </div>
-      <div className="sideBarMenuItem">
+      {/* <div className="sideBarMenuItem">
         <Link to="/leader-board" className='sideBarMenuLink'>
           <span>
             <img src="/images/leaderboard.svg" alt="Dashboard icon" className='sideBarMenuIcon' />
@@ -34,7 +34,7 @@ export default function LeftSideBar() {
           </span>
           
         </Link>
-      </div>
+      </div> */}
       <div className="sideBarMenuItem">
         <Link to="/my-performance" className='sideBarMenuLink'>
           <span>

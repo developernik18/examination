@@ -53,7 +53,6 @@ export default function AllExams() {
             <button className='button examStartButton primaryButton'>Start Exam</button>
           </div>
         </div>
-
       </div>
     </div>
   )

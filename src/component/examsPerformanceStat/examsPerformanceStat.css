@@ -1,0 +1,33 @@
+.examsPerformanceStatContainer {
+  flex: 6;
+  background-color: var(--empty-box-color);
+  margin: 20px 0 20px 40px;
+  border-radius: 10px;
+}
+
+.epstatsContainer {
+  padding: 40px;
+}
+
+.performanceOverallBox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.performanceTitle {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.performanceOverallProgressBar {
+  height: 10px;
+  width: calc(80% - 20px);
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.performanceOverallValue {
+  margin-left: 20px;
+}

@@ -66,7 +66,7 @@ export default function NavigationBox({
         </div>
         <div className="answerStateContainer">
           <div className="answerState leaveQuestion"></div>
-          <div className="answerStateLabel"> Leave Question </div>
+          <div className="answerStateLabel"> Question Skipped </div>
         </div>
         <div className="answerStateContainer">
           <div className="answerState yetToAnswer"></div>

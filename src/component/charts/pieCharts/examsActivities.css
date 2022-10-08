@@ -1,0 +1,12 @@
+.examsActivitiesContainer {
+  flex: 6;
+  background-color: var(--empty-box-color);
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+.doughnutContainer {
+  padding: 40px;
+  max-width: 300px;
+  margin: 0;
+}
