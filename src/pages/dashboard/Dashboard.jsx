@@ -2,8 +2,12 @@ import './dashboard.css'
 import Header from '../../component/header/Header'
 import LeftSideBar from '../../component/sidebar/LeftSideBar'
 import PerformanceChart from '../../component/charts/lineCharts/PerformanceChart'
+import { useSelector } from 'react-redux'
 
 export default function Dashboard() {
+  const user = useSelector(state => state.user);
+  const examRecords = useSelector(state => state.examRecord)
+
   return (
     <div>
       <Header timerRequired={false}/>
@@ -13,10 +17,11 @@ export default function Dashboard() {
         <div className="row">
           <div className="welcomeBox">
             <div className="greetings">
-              Hello, John Doe
+              Hello, {user.username}
             </div>
             <div className="profileSummary">
-              You have completed 4 tests. You have Attempted 8 tests. 
+              You have completed {examRecords.Completed} exams. 
+              You have Attempted {examRecords.Attempted} exams. 
               Your progress is satisfactory.
             </div>
             <button className='button primaryButton'>
@@ -45,7 +50,7 @@ export default function Dashboard() {
                 Attempted exams
               </div>
               <div className="statValue">
-                4 
+                {examRecords.Attempted}
               </div>
             </div>
             <div className="statsBox leftTopShadow">

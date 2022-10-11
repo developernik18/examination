@@ -1,13 +1,19 @@
-import Timer from '../timer/Timer';
-import { Link } from 'react-router-dom';
-import './header.css';
+import Timer from "../timer/Timer";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { updateUser } from "../../slices/userSlice";
 
-export default function Header({timerRequired}) {
+import "./header.css";
+
+export default function Header({ timerRequired }) {
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
   return (
-    <div className='headerContainer'>
+    <div className="headerContainer">
       <div className="container headerItemsContainer">
         <Link to="/" className="logo">
-            Exam Time
+          Exam Time
         </Link>
         {timerRequired && (
           <div className="timer">
@@ -15,7 +21,17 @@ export default function Header({timerRequired}) {
           </div>
         )}
 
+        {user.loggedin && <div className="username">{user.username}</div>}
+        {!user.loggedin && (
+          <button
+            onClick={() =>
+              dispatch(updateUser({ username: "Ryan Sharma", loggedin: true }))
+            }
+          >
+            Login
+          </button>
+        )}
       </div>
     </div>
-  )
+  );
 }
