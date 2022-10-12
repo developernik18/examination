@@ -13,7 +13,7 @@ function App() {
         <Routes >
           <Route path="/" element=<Dashboard /> />
           <Route path="/allExams" element=<AllExams /> />
-          <Route path="/exams" element=<Exams /> />
+          <Route path="/exams/:id" element=<Exams /> />
           <Route path="/my-performance" element=<MyPerformance /> />
         </Routes>
       </BrowserRouter>

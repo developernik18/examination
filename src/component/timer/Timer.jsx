@@ -1,21 +1,24 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getExamDurationById } from "../../data/allExamData";
 import "./timer.css";
 
 const millisecondsToSeconds = 1000;
 const secondsToMinutes = 60;
 const minutesToHours = 60;
-const totalTimeInSeconds = 7200;
-const deadline =
-  new Date().getTime() + totalTimeInSeconds * millisecondsToSeconds;
 
 export default function Timer() {
+  const params = useParams();
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
+  const totalTimeInSeconds = getExamDurationById(params.id);
+  const deadline = new Date().getTime() + totalTimeInSeconds * millisecondsToSeconds;
+  
   const getTime = (deadline) => {
     const time = deadline - Date.now();
-    console.log(time);
+
     setHours(
       Math.floor(
         time / (millisecondsToSeconds * secondsToMinutes * minutesToHours)

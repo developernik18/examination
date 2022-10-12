@@ -1,13 +1,15 @@
 import Header from "../../component/header/Header";
 import NavigationBox from "../../component/navigationBox/NavigationBox";
 import QuestionBox from "../../component/questionBox/QuestionBox";
-import { questionBank } from "../../data";
+import { getExamQuestions } from "../../data/examQuestions";
 import { useState } from "react";
 import LeftSideBar from "../../component/sidebar/LeftSideBar";
+import { useParams } from "react-router-dom";
 import './exams.css';
 
 export default function Exams() {
-  const [questionAnswer, setQuestionAnswer] = useState(questionBank);
+  let params = useParams();
+  const [questionAnswer, setQuestionAnswer] = useState(getExamQuestions(params.id));
   const activeQuestion = questionAnswer.filter(qA => qA.active)[0];
 
   const handleQuestionSelection = (ques, quesNo, totalQues, previous, next) => {

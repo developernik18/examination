@@ -5,10 +5,10 @@
 }
 
 .examCards {
-  margin: 20px;
+  margin: 20px 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -19,7 +19,7 @@
   height: 180px;
   border-radius: 6px;
   color: var(--dark-gray-text);
-  margin: 20px 0;
+  margin: 20px 15px;
 }
 
 .cardDivider {
