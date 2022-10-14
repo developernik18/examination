@@ -20,8 +20,8 @@ export default function Dashboard() {
               Hello, {user.username}
             </div>
             <div className="profileSummary">
-              You have completed {examRecords.Completed} exams of the 
-              {examRecords.Attempted} attempted exams. 
+              You have completed {examRecords.Completed} exams of 
+              the {examRecords.Attempted} attempted exams. 
               Your progress is satisfactory.
             </div>
             {/* <button className='button primaryButton'>

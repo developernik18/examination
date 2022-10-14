@@ -3,7 +3,6 @@ import NavigationBox from "../../component/navigationBox/NavigationBox";
 import QuestionBox from "../../component/questionBox/QuestionBox";
 import { getExamQuestions } from "../../data/examQuestions";
 import { useState } from "react";
-import LeftSideBar from "../../component/sidebar/LeftSideBar";
 import { useParams } from "react-router-dom";
 import './exams.css';
 
@@ -33,8 +32,7 @@ export default function Exams() {
   return (
     <div>
       <Header timerRequired={true}/>
-      <LeftSideBar />
-      <div className="pageBodyContainer">
+      <div className="pageBodyContainer marginLeft0">
         <div className="bodyContainer">
           {activeQuestion && (
             <QuestionBox

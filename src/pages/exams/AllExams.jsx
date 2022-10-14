@@ -19,7 +19,7 @@ export default function AllExams() {
                 <hr className='cardDivider'/>
                 <div className="cardBody">
                   <div className="examTiming cardRow">
-                    Exam Duration : {exam.Duration} hours
+                    Exam Duration : {exam.Duration / 60} hours
                   </div>
                   <div className="numberOfQuestions cardRow">
                     Total Questions : {exam.Questions} Questions

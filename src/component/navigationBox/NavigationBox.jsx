@@ -55,6 +55,9 @@ export default function NavigationBox({
           );
         })}
       </div>
+      <div className="submitButtonContainer">
+        <button className="button submitButton">Submit Answers</button>
+      </div>
       <div className="markForAnswers">
         <div className="answerStateContainer">
           <div className="answerState questionAnswered"></div>

@@ -23,7 +23,7 @@ export default function Header({ timerRequired }) {
 
         {user.loggedin && <div className="username">{user.username}</div>}
         {!user.loggedin && (
-          <button
+          <button className="loginButton"
             onClick={() =>
               dispatch(updateUser({ username: "Ryan Sharma", loggedin: true }))
             }

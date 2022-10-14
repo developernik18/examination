@@ -9,9 +9,9 @@ const minutesToHours = 60;
 
 export default function Timer() {
   const params = useParams();
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+  const [hours, setHours] = useState(-1);
+  const [minutes, setMinutes] = useState(-1);
+  const [seconds, setSeconds] = useState(-1);
 
   const totalTimeInSeconds = getExamDurationById(params.id);
   const deadline = new Date().getTime() + totalTimeInSeconds * millisecondsToSeconds;
