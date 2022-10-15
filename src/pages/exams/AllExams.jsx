@@ -14,7 +14,7 @@ export default function AllExams() {
         <div className="row examCards">
           {allExamsData.map((exam) => {
             return (
-              <div className="card">
+              <div className="card" key={exam.id}>
                 <h4 className="cardTitle"> {exam.Name} </h4>
                 <hr className='cardDivider'/>
                 <div className="cardBody">

@@ -3,10 +3,11 @@ import { useEffect } from "react";
 
 export default function NavigationBox({
   handleQuestionSelection,
-  questionAnswer
+  questionAnswer,
+  handleAnswers
 }) {
   useEffect(() => {
-    if (questionAnswer.filter(qA => qA.active).length < 1) {
+    if (questionAnswer.filter((qA) => qA.active).length < 1) {
       const quesNo = 1;
       const previous = null;
       const next = questionAnswer[1];
@@ -19,6 +20,7 @@ export default function NavigationBox({
       );
     }
   }, [handleQuestionSelection, questionAnswer]);
+
 
   return (
     <div className="navigationContainer">
@@ -33,8 +35,8 @@ export default function NavigationBox({
               ? "answerState markedForReview"
               : "answerState questionAnswered"
             : q.leaveQuestion
-              ? "answerState leaveQuestion"
-              : "answerState";
+            ? "answerState leaveQuestion"
+            : "answerState";
           return (
             <div
               className="questionNavigation"
@@ -56,7 +58,12 @@ export default function NavigationBox({
         })}
       </div>
       <div className="submitButtonContainer">
-        <button className="button submitButton">Submit Answers</button>
+        <button
+          className="button submitButton"
+          onClick={() => handleAnswers(questionAnswer)}
+        >
+          Submit Answers
+        </button>
       </div>
       <div className="markForAnswers">
         <div className="answerStateContainer">
